@@ -1,7 +1,8 @@
 #!/usr/bin/python
+from math import pi as pi
 
 print("Ez a program kerulet es terulet szamitasara alkalmas.")
-print("A lehetosegek a kovetkezok: negyzet, teglalap, haromszog, kor. A parancsokat megtekintheted a 'segitseg' parancs hasznalataval. A kilepeshez a 'kilepes' parancsot hasznald.")
+print("A lehetosegek a kovetkezok: 'negyzet', 'teglalap', 'haromszog', 'kor'. A parancsokat megtekintheted a 'segitseg' parancs hasznalataval. A kilepeshez a 'kilepes' parancsot hasznald.")
 
 while True:
   x = raw_input("Utasitas: ")
@@ -10,65 +11,77 @@ while True:
     break
 
   elif x == "negyzet":
-    print
+    print("")
     a = float(raw_input("Add meg az oldalak hosszat cm-ben: "))
+	
     while a <= 0:
-        print ("Az oldalak hosszanak adj meg egy pozitiv szamot ami nem 0.")
+        print("Az oldalak hosszanak adj meg egy pozitiv szamot ami nem 0.")
         a = float(raw_input("Add meg az oldalak hosszat cm-ben: "))
+		
     print("Kerulete: "+ str(4* a)+ " cm")
     print("Terulete: "+ str(a*a)+ " cm^2")
-    print
+    print("")
 
   elif x == "teglalap":
-    print
+    print("")
     a = float(raw_input("Add meg az 'A' oldalt cm-ben: "))
+	
     while a <= 0:
-        print ("Az 'A' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
+        print("Az 'A' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
         a = float(raw_input("Add meg az A oldalt cm-ben: "))
+		
     b = float(raw_input("Add meg a 'B' oldalt cm-ben: "))
     while b <= 0:
         print ("A 'B' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
         b = float(raw_input("Add meg a 'B' oldalt cm-ben: "))
+		
     print("Kerulete: "+ str((2*a)+(2*b))+ " cm")
     print("Terulete: "+ str(a*b)+ " cm^2")
+	
     if a == b:
         print("Nem ertem miert a teglalapot valasztottad, ha egy negyzet parametereit adtad meg..")
-    print
+		
+    print("")
 
   elif x == "haromszog":
     print
+	
     a = float(raw_input("Add meg az 'A' oldalt cm-ben: "))
     while a <= 0:
         print ("Az 'A' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
         a = float(raw_input("Add meg az A oldalt cm-ben: "))
+		
     b = float(raw_input("Add meg a 'B' oldalt cm-ben: "))
     while b <= 0:
         print ("A 'B' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
         b = float(raw_input("Add meg az B oldalt cm-ben: "))
+		
     c = float(raw_input("Add meg a 'C' oldalt cm-ben: "))
     while c <= 0:
         print ("A 'C' oldal hosszanak adj meg egy pozitiv szamot ami nem 0.")
         c = float(raw_input("Add meg az 'C' oldalt cm-ben: "))
+		
     s = (a+b+c)/2
     print("Kerulete: "+ str(a+b+c)+ " cm")
     print("Terulete: "+ str((s*(s-a)*(s-b)*(s-c)) ** 0.5)+ " cm^2")
-    print
+    print("")
 
   elif x == "kor":
-    print
+    print("")
     s = float(raw_input("Add meg a kor sugarat cm-ben: "))
+	
     while s <= 0:
         print ("A kor sugaranak adj meg egy pozitiv szamot ami nem 0.")
         s = float(raw_input("Add meg a sugarat cm-ben: "))
-    pi = float(3.14159265)
+		
     print("Kerulete: "+ str(float(2)*s*pi)+ " cm")
     print("Terulete: "+ str(s*s*pi)+ " cm^2")
-    print
+    print("")
 
   elif x == 'segitseg':
-    print
-    print("A lehetosegek a kovetkezok: negyzet, teglalap, haromszog, kor. A kilepeshez a 'kilepes' parancsot hasznald.")
-    print
+    print("")
+    print("A lehetosegek a kovetkezok: 'negyzet', 'teglalap', 'haromszog', 'kor'. A kilepeshez a 'kilepes' parancsot hasznald.")
+    print("")
 
   else:
     print("Ismeretlen parancs. Probald ujra.")
